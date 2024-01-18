@@ -14,10 +14,11 @@ struct QuestionView: View {
             Image("logoIdiomQuizApp1")
                 .resizable()
                 .scaledToFit()
+                .frame(width: 250)
             
             Text("Question \(viewModel.currentQuestionIndex + 1): \(viewModel.questions[viewModel.currentQuestionIndex].text)")
                 .padding()
-                .font(.title)
+                .font(.title2)
             
             ForEach(viewModel.questions[viewModel.currentQuestionIndex].options, id: \.self) { option in
                 Button(action: {
@@ -35,7 +36,7 @@ struct QuestionView: View {
 
             Text("Score: \(viewModel.score)")
                            .padding()
-                           .font(.title2)
+                           .font(.title3)
         }
     }
 }

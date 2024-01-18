@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		643CB8C82B59774100C5D30E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CB8C72B59774100C5D30E /* LoginView.swift */; };
+		643CB8CA2B59A7A300C5D30E /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CB8C92B59A7A300C5D30E /* UserView.swift */; };
 		643CBAFE2B5861D300FCC59B /* idiomsQuizAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CBAFD2B5861D300FCC59B /* idiomsQuizAppApp.swift */; };
 		643CBB022B5861D700FCC59B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 643CBB012B5861D700FCC59B /* Assets.xcassets */; };
 		643CBB052B5861D700FCC59B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 643CBB042B5861D700FCC59B /* Preview Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		643CB8C72B59774100C5D30E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		643CB8C92B59A7A300C5D30E /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		643CBAFA2B5861D300FCC59B /* idiomsQuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idiomsQuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		643CBAFD2B5861D300FCC59B /* idiomsQuizAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idiomsQuizAppApp.swift; sourceTree = "<group>"; };
 		643CBB012B5861D700FCC59B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 			children = (
 				64D372852B58BE8200850BFC /* HomeView.swift */,
 				643CBB0B2B58A9F800FCC59B /* QuestionView.swift */,
+				643CB8C72B59774100C5D30E /* LoginView.swift */,
+				643CB8C92B59A7A300C5D30E /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,8 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				643CBB102B58AAF000FCC59B /* QuestionViewViewModel.swift in Sources */,
+				643CB8CA2B59A7A300C5D30E /* UserView.swift in Sources */,
 				64D372862B58BE8200850BFC /* HomeView.swift in Sources */,
 				643CBB0C2B58A9F800FCC59B /* QuestionView.swift in Sources */,
+				643CB8C82B59774100C5D30E /* LoginView.swift in Sources */,
 				643CBAFE2B5861D300FCC59B /* idiomsQuizAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
