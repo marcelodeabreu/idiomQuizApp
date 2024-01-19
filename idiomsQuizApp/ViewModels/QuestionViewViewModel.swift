@@ -52,6 +52,11 @@ class QuizViewModel: ObservableObject {
     }
 
     func nextQuestion() {
+        // Shuffle the questions if there are more than one
+        if questions.count > 1 {
+            questions.shuffle()
+        }
+        
         if currentQuestionIndex < questions.count - 1 {
             currentQuestionIndex += 1
         } else {
