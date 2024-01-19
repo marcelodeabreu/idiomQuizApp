@@ -17,7 +17,7 @@ struct HomeView: View {
                     .padding()
                     .font(.title3)
                 
-                NavigationLink(destination: QuestionView()) {
+                NavigationLink(destination: LoginView()) {
                     Text("Começar")
                         .padding()
                         .frame(maxWidth: .infinity)

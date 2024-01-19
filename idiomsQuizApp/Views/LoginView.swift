@@ -25,9 +25,15 @@ struct LoginView: View {
                 }
             }
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Text("Login")
-            })
+            NavigationLink(destination: QuestionView()) {
+                Text("Começar")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.gray)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            
         }
     }
 }
