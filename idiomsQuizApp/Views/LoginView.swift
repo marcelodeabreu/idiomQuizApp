@@ -3,6 +3,8 @@
 //  Created by Marcelo de Abreu on 18/01/24.
 import SwiftUI
 
+// Authentication will be done with Firebase.
+
 struct LoginView: View {
     
     @State private var username: String = ""

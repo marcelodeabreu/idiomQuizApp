@@ -17,6 +17,7 @@ class QuizViewModel: ObservableObject {
     var questions: [Question] = [
         
         // Add more questions here
+        // create a collection with properties (questions, options, correctAnswer, alreadyAnsweredCorrectly) with Firebase
         
         Question(text: "Hit the hay.", options: ["Bater o martelo.", "Pegar a estrada.", "Ir descansar/dormir.", "Tomar um banho."], correctAnswer: "Ir descansar/dormir."),
         
@@ -54,7 +55,7 @@ class QuizViewModel: ObservableObject {
         if currentQuestionIndex < questions.count - 1 {
             currentQuestionIndex += 1
         } else {
-            if score >= 20 {
+            if score >= 90 {
                 print("You are a pro!")
             } else {
                 print("Keep studying, don't give up!")

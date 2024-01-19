@@ -25,11 +25,10 @@ struct UserView: View {
                     }
                     
                     PhotosPicker("Select a profile image", selection: $userProfilePicture)
-                        .onChange(of: userProfilePicture) { newValue in
+                        .onChange(of: userProfilePicture) {
                             Task(priority: .userInitiated) {
-                                if let newValue {
-                                    if let loadedImageData = try? await
-                                        newValue.loadTransferable(type: Data.self),
+                                if let newValue = userProfilePicture {
+                                    if let loadedImageData = try? await newValue.loadTransferable(type: Data.self),
                                        let loadedImage = UIImage(data: loadedImageData)
                                     {
                                         self.userProfilePictureObject = loadedImage
@@ -37,7 +36,6 @@ struct UserView: View {
                                 }
                             }
                         }
-                    
                     Spacer()
                 }
             }
