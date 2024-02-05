@@ -13,11 +13,9 @@ struct Question {
 class QuizViewModel: ObservableObject {
     @Published var currentQuestionIndex = 0
     @Published var score = 0
+    @Published var answeredCorrectlyIndices: [Int] = []
 
     var questions: [Question] = [
-        
-        // Add more questions here
-        // create a collection with properties (questions, options, correctAnswer, alreadyAnsweredCorrectly) with Firebase
         
         Question(text: "Hit the hay.", options: ["Bater o martelo.", "Pegar a estrada.", "Ir descansar/dormir.", "Tomar um banho."], correctAnswer: "Ir descansar/dormir."),
         
@@ -41,32 +39,58 @@ class QuizViewModel: ObservableObject {
         
         Question(text: "Once in a blue moon.", options: ["Acontece raramente.", "Observar o céu.", "As fases da lua.", "Começar uma tempestade."], correctAnswer: "Acontece raramente."),
         
-        Question(text: "Finding your feet.", options: ["Comprando calçados novos.", "Caminhando muito.", "Estar se acostumando.", "Correr rapidamente."], correctAnswer: "Estar se acostumando.")
+        Question(text: "Finding your feet.", options: ["Comprando calçados novos.", "Caminhando muito.", "Estar se acostumando.", "Correr rapidamente."], correctAnswer: "Estar se acostumando."),
+        
+        Question(text: "Break the ice.", options: ["Quebrar o gelo.", "Ficar em casa.", "Resolver um problema.", "Caminhar na neve."], correctAnswer: "Quebrar o gelo.")
     ]
 
     func checkAnswer(_ selectedAnswer: String) {
         if selectedAnswer == questions[currentQuestionIndex].correctAnswer {
             score += 10
+            answeredCorrectlyIndices.append(currentQuestionIndex)
         }
         nextQuestion()
     }
 
     func nextQuestion() {
-        // Shuffle the questions if there are more than one
         if questions.count > 1 {
             questions.shuffle()
         }
         
-        if currentQuestionIndex < questions.count - 1 {
-            currentQuestionIndex += 1
-        } else {
-            if score >= 90 {
-                print("You are a pro!")
+        repeat {
+            if currentQuestionIndex < questions.count - 1 {
+                currentQuestionIndex += 1
             } else {
-                print("Keep studying, don't give up!")
+                if score >= 90 {
+                    print("You are a pro!")
+                } else {
+                    print("Keep studying, don't give up!")
+                }
+                print("Thanks for playing :)")
+                return
             }
-            print("Thanks for playing :)")
-        }
+        } while answeredCorrectlyIndices.contains(currentQuestionIndex)
     }
 }
 
+/*
+ 
+ Question(text: "Cost an arm and a leg.", options: ["Custar um braço e uma perna.", "Ser muito fácil.", "Ser acessível.", "Ser valioso."], correctAnswer: "Custar um braço e uma perna."),
+
+ Question(text: "Jump on the bandwagon.", options: ["Saltar do vagão.", "Seguir uma tendência.", "Rejeitar a moda.", "Correr na praia."], correctAnswer: "Seguir uma tendência."),
+
+ Question(text: "Hit the nail on the head.", options: ["Bater na porta com a cabeça.", "Acertar em cheio.", "Perder o alvo.", "Martelar a parede."], correctAnswer: "Acertar em cheio."),
+
+ Question(text: "Burn bridges.", options: ["Queimar pontes.", "Construir pontes.", "Cruzar o rio.", "Fugir de um incêndio."], correctAnswer: "Queimar pontes."),
+
+ Question(text: "Cut to the chase.", options: ["Cortar para o chá.", "Ir direto ao ponto.", "Correr para a floresta.", "Pular a corda."], correctAnswer: "Ir direto ao ponto."),
+
+ Question(text: "A piece of cake.", options: ["Um pedaço de bolo.", "Algo complicado.", "Um quebra-cabeça.", "Uma fatia de queijo."], correctAnswer: "Um pedaço de bolo."),
+
+ Question(text: "Spill the beans.", options: ["Derramar feijões.", "Contar um segredo.", "Fazer uma bagunça.", "Comer uma refeição."], correctAnswer: "Contar um segredo."),
+
+ Question(text: "Blessing in disguise.", options: ["Bênção disfarçada.", "Maldição evidente.", "Sorte óbvia.", "Problema solucionado."], correctAnswer: "Bênção disfarçada."),
+
+ // Adicione mais perguntas conforme necessário
+
+ */

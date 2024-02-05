@@ -10,33 +10,43 @@ struct QuestionView: View {
     
     var body: some View {
         
-        VStack {
-            Image("logoIdiomQuizApp1")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250)
+        Image("logoIdiomQuizApp5")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 250)
+            .padding(50)
+        
+        ZStack {
             
-            Text("Question \(viewModel.currentQuestionIndex + 1): \(viewModel.questions[viewModel.currentQuestionIndex].text)")
-                .padding()
-                .font(.title2)
-            
-            ForEach(viewModel.questions[viewModel.currentQuestionIndex].options, id: \.self) { option in
-                Button(action: {
-                    viewModel.checkAnswer(option) } ) {
-                        
-                    Text(option)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+            VStack {
+                
+                Text("\(viewModel.currentQuestionIndex + 1): \(viewModel.questions[viewModel.currentQuestionIndex].text)")
+                    .padding(20)
+                    .font(.title2)
+                
+                ForEach(viewModel.questions[viewModel.currentQuestionIndex].options, id: \.self) { option in
+                    Button(action: {
+                        viewModel.checkAnswer(option) } ) {
+                            
+                        Text(option)
                     .padding()
-            }
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.horizontal, 20)
+                    }
+                    .padding(5)
+                }
 
-            Text("Score: \(viewModel.score)")
-                           .padding()
-                           .font(.title3)
+                Text("Score: \(viewModel.score)")
+                               .padding(20)
+                               .foregroundColor(.green)
+                               .font(.title3)
+            }
+            .background(Color.gray)
+            .cornerRadius(10)
+            .padding()
         }
     }
 }

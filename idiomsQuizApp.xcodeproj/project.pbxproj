@@ -59,6 +59,7 @@
 		643CBAFC2B5861D300FCC59B /* idiomsQuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				645593F12B715E97001E0BDD /* Components */,
 				643CBB0E2B58AAD700FCC59B /* ViewModels */,
 				643CBB0D2B58AACA00FCC59B /* Views */,
 				643CBAFD2B5861D300FCC59B /* idiomsQuizAppApp.swift */,
@@ -93,6 +94,13 @@
 				643CBB0F2B58AAF000FCC59B /* QuestionViewViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		645593F12B715E97001E0BDD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

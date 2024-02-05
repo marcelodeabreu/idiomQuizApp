@@ -12,10 +12,11 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Image("logoIdiomQuizApp1")
+            Image("logoIdiomQuizApp5")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 250)
+                .padding(50)
             
             Form {
                 Section {
@@ -31,12 +32,14 @@ struct LoginView: View {
                 Text("Começar")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.gray)
+                    .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .padding(.horizontal, 20)
             }
             
         }
+        .padding()
     }
 }
 

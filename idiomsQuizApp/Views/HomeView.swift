@@ -8,25 +8,41 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 
-                Image("logoIdiomQuizApp1")
+                Image("logoIdiomQuizApp5")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 250)
+                    .padding(50)
                 
-                Text("Teste seus conhecimentos em Idioms!")
-                    .padding()
-                    .font(.title3)
+                Text("Speak Native, Go Fluenty!")
+                    .font(.title2)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
+                
+                Spacer()
+                
+                Text("Go Native, Go Fluenty!")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
                 
                 NavigationLink(destination: LoginView()) {
                     Text("Começar")
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.gray)
+                        .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        .padding(.horizontal, 20)
                 }
+                .padding(.bottom, 30)
             }
+            .padding()
+            .navigationBarHidden(true)
         }
+        .background(Color.white.edgesIgnoringSafeArea(.all))
     }
 }
 
