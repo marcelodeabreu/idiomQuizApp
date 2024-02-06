@@ -41,7 +41,7 @@ struct QuestionView: View {
 
                 Text("Score: \(viewModel.score)")
                                .padding(20)
-                               .foregroundColor(.green)
+                               .foregroundColor(.red)
                                .font(.title3)
             }
             .background(Color.gray)

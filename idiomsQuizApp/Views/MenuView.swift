@@ -31,6 +31,7 @@ struct MenuView: View {
                     .background(Color.blue)
                     .cornerRadius(8)
                 
+                // NAVIGATION LINK - QUESTION VIEW
                 
                 ZStack {
                     Text("GAME MODE (Idiom Quizz)")
