@@ -22,7 +22,7 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                Text("Go Native, Go Fluenty!")
+                Text("Um app para se tornar Fluenty!")
                     .font(.footnote)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)

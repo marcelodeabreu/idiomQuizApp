@@ -28,7 +28,7 @@ struct LoginView: View {
                 }
             }
             
-            NavigationLink(destination: QuestionView()) {
+            NavigationLink(destination: MenuView()) {
                 Text("Começar")
                     .padding()
                     .frame(maxWidth: .infinity)

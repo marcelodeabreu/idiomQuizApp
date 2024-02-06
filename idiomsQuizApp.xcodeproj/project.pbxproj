@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640529292B729AF200DB2F06 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640529282B729AF200DB2F06 /* MenuView.swift */; };
 		643CB8C82B59774100C5D30E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CB8C72B59774100C5D30E /* LoginView.swift */; };
 		643CB8CA2B59A7A300C5D30E /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CB8C92B59A7A300C5D30E /* UserView.swift */; };
 		643CBAFE2B5861D300FCC59B /* idiomsQuizAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643CBAFD2B5861D300FCC59B /* idiomsQuizAppApp.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640529282B729AF200DB2F06 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		643CB8C72B59774100C5D30E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		643CB8C92B59A7A300C5D30E /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		643CBAFA2B5861D300FCC59B /* idiomsQuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idiomsQuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				643CBB0B2B58A9F800FCC59B /* QuestionView.swift */,
 				643CB8C72B59774100C5D30E /* LoginView.swift */,
 				643CB8C92B59A7A300C5D30E /* UserView.swift */,
+				640529282B729AF200DB2F06 /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640529292B729AF200DB2F06 /* MenuView.swift in Sources */,
 				643CBB102B58AAF000FCC59B /* QuestionViewViewModel.swift in Sources */,
 				643CB8CA2B59A7A300C5D30E /* UserView.swift in Sources */,
 				64D372862B58BE8200850BFC /* HomeView.swift in Sources */,

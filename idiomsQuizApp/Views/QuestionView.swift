@@ -33,7 +33,7 @@ struct QuestionView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.blue)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .cornerRadius(8)
                     .padding(.horizontal, 20)
                     }
                     .padding(5)
@@ -45,7 +45,7 @@ struct QuestionView: View {
                                .font(.title3)
             }
             .background(Color.gray)
-            .cornerRadius(10)
+            .cornerRadius(8)
             .padding()
         }
     }

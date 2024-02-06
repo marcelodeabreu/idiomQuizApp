@@ -41,17 +41,29 @@ class QuizViewModel: ObservableObject {
         
         Question(text: "Finding your feet.", options: ["Comprando calçados novos.", "Caminhando muito.", "Estar se acostumando.", "Correr rapidamente."], correctAnswer: "Estar se acostumando."),
         
-        Question(text: "Break the ice.", options: ["Quebrar o gelo.", "Ficar em casa.", "Resolver um problema.", "Caminhar na neve."], correctAnswer: "Quebrar o gelo.")
+        Question(text: "Break the ice.", options: ["Quebrar o gelo.", "Ficar em casa.", "Resolver um problema.", "Caminhar na neve."], correctAnswer: "Quebrar o gelo."),
+        
+        Question(text: "Cost an arm and a leg.", options: ["Custar muito caro.", "Ser muito fácil.", "Ser acessível.", "Custar muito barato."], correctAnswer: "Custar muito caro."),
+        
+        Question(text: "Hit the nail on the head.", options: ["Bater na porta com a cabeça.", "Acertar em cheio.", "Perder o alvo.", "Martelar a parede."], correctAnswer: "Acertar em cheio.")
+        
     ]
-
+    
+    // check answer func
     func checkAnswer(_ selectedAnswer: String) {
         if selectedAnswer == questions[currentQuestionIndex].correctAnswer {
             score += 10
             answeredCorrectlyIndices.append(currentQuestionIndex)
+            
+            // REMORE ANSWERED QUESTION FROM ARRAY
+            questions.remove(at: currentQuestionIndex)
         }
         nextQuestion()
     }
 
+    // next question func
+    // if answered correctly, score points and move the answered question to the [answeredCorrectlyIndice]
+    // if answered wrongly, just move to the next question and eventually it will appear again
     func nextQuestion() {
         if questions.count > 1 {
             questions.shuffle()
@@ -61,6 +73,9 @@ class QuizViewModel: ObservableObject {
             if currentQuestionIndex < questions.count - 1 {
                 currentQuestionIndex += 1
             } else {
+                
+                // ACTION FOR WRONG ANSWER
+                
                 if score >= 90 {
                     print("You are a pro!")
                 } else {
@@ -72,25 +87,3 @@ class QuizViewModel: ObservableObject {
         } while answeredCorrectlyIndices.contains(currentQuestionIndex)
     }
 }
-
-/*
- 
- Question(text: "Cost an arm and a leg.", options: ["Custar um braço e uma perna.", "Ser muito fácil.", "Ser acessível.", "Ser valioso."], correctAnswer: "Custar um braço e uma perna."),
-
- Question(text: "Jump on the bandwagon.", options: ["Saltar do vagão.", "Seguir uma tendência.", "Rejeitar a moda.", "Correr na praia."], correctAnswer: "Seguir uma tendência."),
-
- Question(text: "Hit the nail on the head.", options: ["Bater na porta com a cabeça.", "Acertar em cheio.", "Perder o alvo.", "Martelar a parede."], correctAnswer: "Acertar em cheio."),
-
- Question(text: "Burn bridges.", options: ["Queimar pontes.", "Construir pontes.", "Cruzar o rio.", "Fugir de um incêndio."], correctAnswer: "Queimar pontes."),
-
- Question(text: "Cut to the chase.", options: ["Cortar para o chá.", "Ir direto ao ponto.", "Correr para a floresta.", "Pular a corda."], correctAnswer: "Ir direto ao ponto."),
-
- Question(text: "A piece of cake.", options: ["Um pedaço de bolo.", "Algo complicado.", "Um quebra-cabeça.", "Uma fatia de queijo."], correctAnswer: "Um pedaço de bolo."),
-
- Question(text: "Spill the beans.", options: ["Derramar feijões.", "Contar um segredo.", "Fazer uma bagunça.", "Comer uma refeição."], correctAnswer: "Contar um segredo."),
-
- Question(text: "Blessing in disguise.", options: ["Bênção disfarçada.", "Maldição evidente.", "Sorte óbvia.", "Problema solucionado."], correctAnswer: "Bênção disfarçada."),
-
- // Adicione mais perguntas conforme necessário
-
- */
